@@ -4,8 +4,10 @@ define('src/raf/Repeater', [
 
   // INTENT
   // I have always loved the RAF requestAnimationFrame system.
-  // and I thought ti should be wrapped simply for EVERYONE...If you are using this code...
+  // and I thought it should be wrapped simply for EVERYONE...If you are using this code...
   // I am happy.
+  // You are welcome to steal this snippet and eveolve it in your own project.
+  // But once you copy paste it is yours.
 
 
   const DEFAULT_OPTIONS = {
@@ -45,7 +47,7 @@ define('src/raf/Repeater', [
     };
   }
 
-  function Repeater(options) {
+  function Repeater(options, callback) {
     let tempOpts = options ? options : {};
     this.options = Object.assign(tempOpts, DEFAULT_OPTIONS);
     this.callback = createClosure(this, callback, this.options);
